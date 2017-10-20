@@ -2,7 +2,7 @@ package com.flysall.model;
 
 public class AnswerComment {
 	private Integer answerCommentId;
-	private String answerCommnetContent;
+	private String answerCommentContent;
 	private Integer likedCount;
 	private long createTime;
 	private Integer atUserId;
@@ -22,12 +22,12 @@ public class AnswerComment {
 		this.answerCommentId = answerCommentId;
 	}
 
-	public String getAnswerCommnetContent() {
-		return answerCommnetContent;
+	public String getAnswerCommentContent() {
+		return answerCommentContent;
 	}
 
-	public void setAnswerCommnetContent(String answerCommnetContent) {
-		this.answerCommnetContent = answerCommnetContent;
+	public void setAnswerCommentContent(String answerCommentContent) {
+		this.answerCommentContent = answerCommentContent;
 	}
 
 	public Integer getLikedCount() {

@@ -15,7 +15,7 @@ public class Message {
 	private Integer fromUserId;
 	private String fromUserName;
 	private Integer questionId;
-	private Integer questionTitle;
+	private String questionTitle;
 	private Integer answerId;
 	private Integer commentId;
 	
@@ -85,11 +85,11 @@ public class Message {
 		this.questionId = questionId;
 	}
 
-	public Integer getQuestionTitle() {
+	public String getQuestionTitle() {
 		return questionTitle;
 	}
 
-	public void setQuestionTitle(Integer questionTitle) {
+	public void setQuestionTitle(String questionTitle) {
 		this.questionTitle = questionTitle;
 	}
 

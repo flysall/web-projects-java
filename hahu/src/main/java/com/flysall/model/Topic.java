@@ -77,7 +77,7 @@ public class Topic {
 		if(topicId == null){
 			if(other.topicId != null)
 				return false;
-		} else if(!topicId.equals(other.topicId)
+		} else if(!topicId.equals(other.topicId))
 				return false;
 		return true;
 	}

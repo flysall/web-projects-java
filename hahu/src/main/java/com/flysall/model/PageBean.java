@@ -11,6 +11,11 @@ public class PageBean<T> {
 	public PageBean(){
 		
 	}
+	
+	public PageBean(int allPage, int curPage){
+		this.allPage = allPage;
+		this.curPage = curPage;
+	}
 
 	public int getAllPage() {
 		return allPage;
