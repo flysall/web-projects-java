@@ -21,6 +21,8 @@ public interface QuestionMapper {
 
 	int selectQuestionCountByTopicId(@Param("topicId") Integer topicId);
 
+	List<Integer> listQuestionIdByTopicId(Map<String, Object> map);
+	
 	List<Question> listQuestionByQuestionId(List<Integer> questionIdList);
 
 	List<Question> listRelateQuestion(@Param("questionId") Integer questionId);

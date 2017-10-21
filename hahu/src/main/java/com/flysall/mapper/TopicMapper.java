@@ -11,13 +11,15 @@ public interface TopicMapper {
 	
 	Integer insertTopic(Topic topic);
 	
+	List<Topic> listRootTopic();
+	
 	List<Topic> listTopicByParentId(@Param("parentTopicId") Integer parentTopicId);
 	
 	Topic selectTopicByTopicId(@Param("topicId") Integer topicId);
 	
 	List<Integer> selectQuestionIdByTopicId(@Param("topic") Integer topicId);
 	
-	List<Topic> listTopicByTopicId(@Param("topicId") Integer topicId);
+	List<Topic> listTopicByTopicId(@Param("topicId") List<Integer> idList);
 	
 	List<Topic> listHotTopic();
 	

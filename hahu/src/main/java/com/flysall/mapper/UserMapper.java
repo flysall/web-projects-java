@@ -42,5 +42,5 @@ public interface UserMapper {
 
 	int insertWeiboUser(User user);
 
-	String getWeiboUserId(String userId);
+	String getWeiboUserId(Integer localUserId);
 }

@@ -98,7 +98,7 @@ public class User {
 		return avataUrl;
 	}
 
-	public void setAvataUrl(String avataUrl) {
+	public void setAvatarUrl(String avataUrl) {
 		this.avataUrl = avataUrl;
 	}
 

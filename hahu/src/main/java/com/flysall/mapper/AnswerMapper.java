@@ -17,7 +17,7 @@ public interface AnswerMapper {
 
 	List<Answer> listAnswerByAnswerId(List<Integer> idList);
 
-	List<Answer> listGoodAnwserByQuestionId(Map<String, Object> map);
+	List<Answer> listGoodAnswerByQuestionId(Map<String, Object> map);
 
 	int listAnswerCountByQuestionId(List<Integer> questionIdList);
 
