@@ -225,7 +225,7 @@ public class UserService {
 		String loginToken = null;
 		Cookie[] cookies = request.getCookies();
 		for (Cookie cookie : cookies) {
-			if (cookie.getName().equals("loginTokn")) {
+			if (cookie.getName().equals("loginToken")) {
 				loginToken = cookie.getValue();
 				break;
 			}

@@ -56,6 +56,14 @@ public class CollectionService {
 		return list;
 	}
 	
+	public void collectAnswer(Integer collectionId, Integer answerId){
+		userMapper.updateCollectedCountByAnswerId(answerId);
+		Jedis jedis = jedisPool.getResource();
+		jedis.zadd(collectionId + RedisKey.COLLECT, new Date().getTime(), String.valueOf(answerId));
+		jedis.zadd(answerId + RedisKey.COLLECTED, new Date().getTime(), String.valueOf(collectionId));
+		jedisPool.returnResource(jedis);
+	}
+	
 	/**
 	 * 取消收藏答案
 	 * @param collectionId
