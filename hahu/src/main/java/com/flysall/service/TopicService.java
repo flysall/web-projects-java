@@ -173,7 +173,7 @@ public class TopicService {
 		for (Answer answer : answerList) {
 			// 获取用户点赞状态
 			Long rank = jedis.zrank(answer.getAnswerId() + RedisKey.LIKED_ANSWER, String.valueOf(userId));
-			answer.setLikeState(rank == null ? "false" : "true");
+			answer.setLikedState(rank == null ? "false" : "true");
 		}
 		// 构造PageBean
 		PageBean<Answer> pageBean = new PageBean<>(allPage, curPage);

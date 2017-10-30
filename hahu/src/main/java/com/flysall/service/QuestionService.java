@@ -146,7 +146,7 @@ public class QuestionService {
 
 			// 获取用户点赞状态
 			Long rank = jedis.zrank(answer.getAnswerId() + RedisKey.LIKED_ANSWER, String.valueOf(userId));
-			answer.setLikeState(rank == null ? "false" : "true");
+			answer.setLikedState(rank == null ? "false" : "true");
 			// 获取该回答被点赞次数
 			Long likedCount = jedis.zcard(answer.getAnswerId() + RedisKey.LIKED_ANSWER);
 			answer.setLikedCount(Integer.valueOf(likedCount + ""));

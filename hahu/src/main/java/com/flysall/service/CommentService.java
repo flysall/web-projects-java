@@ -152,7 +152,7 @@ public class CommentService {
 	public void likeAnswerComment(Integer userId, Integer answerCommentId) {
 		Jedis jedis = jedisPool.getResource();
 		jedis.zadd(userId + RedisKey.LIKE_ANSWER, new Date().getTime(), String.valueOf(answerCommentId));
-		jedis.zadd(answerCommentId + RedisKey.LIKED_ANSWER_COMMENT, new date().getTime(), String.valueOf(userId));
+		jedis.zadd(answerCommentId + RedisKey.LIKED_ANSWER_COMMENT, new Date().getTime(), String.valueOf(userId));
 		jedisPool.returnResource(jedis);
 	}
 }
