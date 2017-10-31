@@ -1,6 +1,7 @@
 package com.flysall.service;
 
 import java.util.*;
+import java.util.HashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,7 +31,7 @@ public class TopicService {
 	 * @return Map对象
 	 */
 	public Map<String, Object> listAllTopic() {
-		Map<String, Object> map = new HashMap<>();
+		Map<String, Object> map = new HashMap<String, Object>();
 		List<Topic> hotTopicList = topicMapper.listHotTopic();
 		List<Topic> rootTopicList = topicMapper.listRootTopic();
 		map.put("hotTopicList", hotTopicList);

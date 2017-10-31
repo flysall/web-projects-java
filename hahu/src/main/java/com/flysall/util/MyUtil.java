@@ -51,7 +51,7 @@ public class MyUtil {
 	 * @return
 	 */
 	public static List<Integer> StringSetToIntegerList(Set<String> set){
-		List<Integer> list = new ArrayList<>();
+		List<Integer> list = new ArrayList<Integer>();
 		for(String s : set){
 			list.add(Integer.parseInt(s));
 		}

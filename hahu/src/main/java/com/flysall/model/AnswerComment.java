@@ -88,8 +88,10 @@ public class AnswerComment {
 
 	@Override
 	public String toString() {
-		return "AnswerComment [answerCommentId=" + answerCommentId + ", answerCommnetContent=" + answerCommnetContent
+		return "AnswerComment [answerCommentId=" + answerCommentId + ", answerCommentContent=" + answerCommentContent
 				+ ", likedCount=" + likedCount + ", createTime=" + createTime + ", atUserId=" + atUserId + ", answerId="
-				+ answerId + ", userId=" + userId + ", likeState=" + likeState + "]";
+				+ answerId + ", userId=" + userId + ", likeState=" + likeState + ", user=" + user + "]";
 	}
+	
+	
 }

@@ -91,42 +91,7 @@ public class HttpUtils {
 		}
 		EntityUtils.consume(entity);
 		response1.close();
-		System.out.println("返回结果: " ＋ body);
+		System.out.println("返回结果: " + body);
 		return body;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

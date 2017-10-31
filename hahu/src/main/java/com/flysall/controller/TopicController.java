@@ -49,7 +49,7 @@ public class TopicController {
 	@ResponseBody
 	public Response listTopicByParentTopicId(Integer parentTopicId) {
 		List<Topic> list = topicService.listTopicByParentTopicId(parentTopicId);
-		Map<String, Object> map = new HashMap<>();
+		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("topicList", list);
 		return new Response(0, "", map);
 	}
