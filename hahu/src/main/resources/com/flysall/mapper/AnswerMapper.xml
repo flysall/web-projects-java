@@ -16,9 +16,9 @@
 
     <resultMap type="com.flysall.model.Answer" id="answerMap">
         <id column="answer_id" property="answerId"/>
-        <result column="answer_content" property="answerContent">
+        <result column="answer_content" property="answerContent" />
         <result column="liked_count" property="likedCount"/>
-        <result column="create_time" property="createTime">
+        <result column="create_time" property="createTime" />
 
         <association property="user" javaType="com.flysall.model.User" resultMap="userMap" />
         <association property="question" javaType="com.flysall.model.Question" resultMap="questionMap" />
@@ -32,9 +32,9 @@
         values(#{answerContent}, #{createTime}, #{questionId}, #{userId})
     </insert>
 
-    <insert id="selectAnswerByQuestionId" resultType="com.flysall.model.Answer">
+    <select id="selectAnswerByQuestionId" resultType="com.flysall.model.Answer">
         select * from answer where question_id = #{questionId}
-    </insert>
+    </select>
 
     <select id="selectAnswerCountByUserId" resultType="int">
         select count(*) from answer where user_id = #{userId}
@@ -70,6 +70,7 @@
             <foreach collection="list" item="item" index="index" open="("
                 separator="," close=")">
                 #{item}
+            </foreach>
         </where>
     </select>
 
@@ -129,3 +130,4 @@
         select user_id from answer
         where answer_id = #{answerId}
     </select>
+</mapper>

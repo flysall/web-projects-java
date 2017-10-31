@@ -28,7 +28,7 @@
         limit #{offset}, #{limit}
     </select>
 
-    <select id="selectQuestionByPage" resultType="com.flysll.model.Question">
+    <select id="selectQuestionByPage" resultType="com.flysall.model.Question">
         select question_id, question_title
         from question
         limit #{offset}, #{limit}
@@ -46,13 +46,13 @@
         limit #{offset}, #{limit}
     </select>
 
-    <select id="listQuestionByQuestionId" resultType="com.flysall.Question">
+    <select id="listQuestionByQuestionId" resultType="com.flysall.model.Question">
         select question_id, question_title, create_time from question
         <where>
             question_id in
             <foreach collection="list" item="item" index="index" open="("
                 separator="," close=")">
-                <div id="">item
+                #{item}
             </foreach>
         </where>
     </select>
