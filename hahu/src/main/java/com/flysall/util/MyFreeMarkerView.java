@@ -6,11 +6,12 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.web.servlet.view.freemarker.FreeMarkerView;
 
-public class MyFreeMarkerView extends FreeMarkerView{
+public class MyFreeMarkerView extends FreeMarkerView {
+
 	private static final String CONTEXT_PATH = "base";
-	
-	 
-	protected void exposeHelper(Map<String, Object> model, HttpServletRequest request) throws Exception{
+
+	@Override
+	protected void exposeHelpers(Map<String, Object> model, HttpServletRequest request) throws Exception {
 		model.put(CONTEXT_PATH, request.getContextPath());
 		super.exposeHelpers(model, request);
 	}
