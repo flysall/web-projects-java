@@ -1,1 +1,4 @@
 springboot-demo
+*/target/*
+*/out/*
+jdbc.properties

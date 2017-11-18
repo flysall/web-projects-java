@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.flysall.appoint.dao.AppointmentDao">
+    <insert id="insertAppointment">
+        <!-- ignore逐渐冲突, 报错 -->
+        insert ignore into appointment(book_id, student_id)
+        values (#{bookId}, #{studentId})
+    </insert>
+
+    <!-- 查询某个学生的所有预约记录 -->
+    <select id="quaryAndReturn" resultType="com.flysall.appoint.entity.Appointment">
+        SELECT
+            a.book_id, <!--mybatis会认为是book_id,又因为开启了驼峰命名法 所以最终是bookId -->
+            a.student_id,
+            a.appoint_time,
+            b.book_id "book.book_id", <!--b.book_id as "book.book_id" 告诉mybatis b.book_id是Appointment中book属性的值-->
+            b.`name` "book.name",
+            b.introd "book.introd"
+            b.number "book.number"
+        from appointment a
+        inner join book b on a.book_id = b.book_id
+        where a.student_id = #{studentId}
+    </select>
+</mapper>
