@@ -7,7 +7,7 @@ public class Book {
     private long bookId; //图书ID
     private String name; //图书名
     private int number; //光藏数目
-    private String introd;
+    private String introd;  //图书简介
 
     public Book(){
 

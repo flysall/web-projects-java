@@ -87,6 +87,7 @@ public class BookController {
 
     /**
      * 验证输入的用户名，密码是否正确
+     * 此处即位前后端json数据交互
      * @param studentId
      * @param password
      * @return
