@@ -26,7 +26,7 @@
                     <tr>
                         <td>${book.bookId}</td>
                         <td>${book.name}</td>
-                        <td>${book.intro}</td>
+                        <td>${book.introd}</td>
                         <td>${book.number}</td>
                         <td>1</td>
                     </tr>
@@ -36,7 +36,7 @@
         <div class="panel-body text-center">
             <h2 class="text-danger">
                 <span class="glyphicon" id="appoint-box"></span>
-                <span class="glyphicon"><a class="btn btn-primary btn-lg" href="/books/appoint?studentId=${cookie['student'].value}" target="_blank">查看我预约的书籍</a></sapn>
+                <span class="glyphicon"><a class="btn btn-primary btn-lg" href="/ssm-BookAppointment/books/appoint?studentId=${cookie['student'].value}" target="_blank">查看我预约的书籍</a></sapn>
             </h2>
         </div>
     </div>
@@ -86,10 +86,11 @@
 
 <script src="/resources/script/bookappointment.js" type="text/javascript"></script>
 <script type="text/javascript">
-    ${function(){
-        //EL表达式传入参数
+    $(function () {
+        //使用EL表达式传入参数
         bookappointment.detail.init({
-            bookId:${book.bookId}
+            bookId:${book.bookId}  
+             
         });
     })
 </script>

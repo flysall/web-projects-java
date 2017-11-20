@@ -4,7 +4,7 @@
 <html>
 <head>
     <title>图书列表</title>
-    <%@include file="common/head.js" %>
+    <%@include file="common/head.jsp" %>
 </head>
 <body>
     <div class="container">
@@ -46,7 +46,7 @@
                             <td>${sk.bookId}</td>
                             <td>${sk.name}</td>
                             <td>${sk.number}</td>
-                            <td<a class="btn btn-info" href="/books/${sk.bookId}/detail" target="_blank">
+                            <td><a class="btn btn-info" href="/ssm-BookAppointment/books/${sk.bookId}/detail" target="_blank">详细</a></td>
                         </tr>
                     </c:forEach>
                 </tbody>

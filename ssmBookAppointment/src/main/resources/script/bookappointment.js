@@ -26,35 +26,35 @@ var bookappointment={
             }
         }
     },
-//将学号和用户名与数据库匹配
-verifyWithDatabase:function(studentId,password){
-    var result=false;
-    var params={};
-    params.studentId=studentId;
-    params.password=password;
-    console.log("params.password:"+params.password);
-    var verifyUrl=bookappointment.URL.verify();
-    $.ajax({
-        type:'post',
-        url:verifyUrl,
-        data:params,
-        datatype:'josn', 
-        async:false,                       //同步调用，保证先执行result=true,后再执行return result;
-        success:function(data){
-            if(data.result=='SUCCESS'){
-                window.location.reload();
-                //弹出登录成功！
-                alert("登陆成功！");
-                result=true;
-            }else{
-                result=false;
+    //将学号和用户名与数据库匹配
+    verifyWithDatabase:function(studentId,password){
+        var result=false;
+        var params={};
+        params.studentId=studentId;
+        params.password=password;
+        console.log("params.password:"+params.password);
+        var verifyUrl=bookappointment.URL.verify();
+        $.ajax({
+            type:'post',
+            url:verifyUrl,
+            data:params,
+            datatype:'josn', 
+            async:false,                       //同步调用，保证先执行result=true,后再执行return result;
+            success:function(data){
+                if(data.result=='SUCCESS'){
+                    window.location.reload();
+                    //弹出登录成功！
+                    alert("登陆成功！");
+                    result=true;
+                }else{
+                    result=false;
+                }
             }
-        }
-    });
-    console.log("我是验证结果："+result);
-    return result;
-    
-},
+        });
+        console.log("我是验证结果："+result);
+        return result;
+        
+    },
 
     //预订图书逻辑
     detail:{
@@ -101,6 +101,7 @@ verifyWithDatabase:function(studentId,password){
             }
         }
     },
+    
     appointment:function(bookId,studentId,node){
         console.log("我执行预约方法");
         node.html('<button class="btn btn-primary btn-lg" id="appointmentBtn">预约</button>');
