@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ssmBookAppointment" />
+        <module name="ssm-BookAppointment" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="ssmBookAppointment" target="1.7" />
+      <module name="ssm-BookAppointment" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

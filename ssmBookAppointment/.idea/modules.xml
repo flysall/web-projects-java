@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ssmBookAppointment.iml" filepath="$PROJECT_DIR$/ssmBookAppointment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ssm-BookAppointment.iml" filepath="$PROJECT_DIR$/ssm-BookAppointment.iml" />
     </modules>
   </component>
 </project>

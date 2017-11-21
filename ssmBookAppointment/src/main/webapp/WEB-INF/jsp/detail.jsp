@@ -1,8 +1,15 @@
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme() + "://"
+    + request.getServerName() + ":" + request.getServerPort()
+    + path + "/";
+%>    
 <%@page contentType="text/html; charset=UTF-8" language="java" %>
 <%@include file="common/tag.jsp" %>
 <html>
 <head>
     <title>预约详情页</title>
+    <base href="<%=basePath%>">
     <%@include file="common/head.jsp" %>
 </head>
 <body>
@@ -66,7 +73,7 @@
 
             <div class="modal-footer">
                 <span id="studentMessage" class="glyphicon"> </span>
-                <button type="button" id="StudentBtn" class="btn btn-success">
+                <button type="button" id="studentBtn" class="btn btn-success">
                     <span class="glyphicon glypicon-student"></span>
                     Submit
                 </buton>
@@ -84,13 +91,12 @@
 <%--jQuery countDown倒计时插件--%>
 <script src="http://cdn.bootcss.com/jquery.countdown/2.1.0/jquery.countdown.min.js"></script>
 
-<script src="/resources/script/bookappointment.js" type="text/javascript"></script>
+<script src="/ssm-BookAppointment/resources/script/bookappointment.js" type="text/javascript"></script>
 <script type="text/javascript">
     $(function () {
         //使用EL表达式传入参数
         bookappointment.detail.init({
-            bookId:${book.bookId}  
-             
+            bookId:${book.bookId}               
         });
     })
 </script>

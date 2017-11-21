@@ -16,7 +16,7 @@ import com.flysall.appoint.enums.AppointStateEnum;
 import com.flysall.appoint.exception.NoNumberException;
 import com.flysall.appoint.exception.RepeatAppointException;
 import com.flysall.appoint.service.BookService;
-import org.apache.ibatis.annotations.Param;
+import com.flysall.appoint.service.Impl.BookServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -92,7 +92,7 @@ public class BookController {
      * @param password
      * @return
      */
-    @RequestMapping(value="/verfiy", method = RequestMethod.POST, produces =
+    @RequestMapping(value="/verify", method = RequestMethod.POST, produces =
             {"application/json; charset=utf-8"})
     @ResponseBody
     private Map validate(Long studentId, Long password) {
