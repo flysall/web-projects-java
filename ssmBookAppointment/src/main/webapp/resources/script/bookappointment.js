@@ -2,7 +2,7 @@ var bookappointment={
     //封装相关ajax的url
     URL:{
         appoint:function(bookId,studentId){
-            return '/books/'+bookId+'/appoint?studentId='+studentId;
+            return '/ssm-BookAppointment/books/'+bookId+'/appoint?studentId='+studentId;
         },
         verify:function(){
             return '/ssm-BookAppointment/books'+'/verify';
@@ -11,7 +11,7 @@ var bookappointment={
     
     //验证学号和密码
     validateStudent:function(studentId,password){
-        console.log("studentId"+studentId);
+        console.log("studentId:"+studentId);
         if(!studentId||!password){
             return "nothing";
         }else if(studentId.length!=10 ||isNaN(studentId)||password.length!=6 ||isNaN(password)){
@@ -90,8 +90,8 @@ var bookappointment={
                         $('#studentMessage').hide().html('<label class="label label-danger">学号密码不匹配!</label>').show(300);
                     }else if(temp=="success"){
                          //学号与密码匹配正确，将学号密码保存在cookie中。不设置cookie过期时间，这样即为session模式，关闭浏览器就不保存密码了。
-                        $.cookie('studentId', studentId, {  path: '/books'}); 
-                        $.cookie('password', password, {  path: '/books'}); 
+                        $.cookie('studentId', studentId, {  path: '/ssm-BookAppointment/books'}); 
+                        $.cookie('password', password, {  path: '/ssm-BookAppointment/books'}); 
                         // 跳转到预约逻辑 
                         var appointbox=$('#appoint-box');
                         bookappointment.appointment(bookId,studentId,appointbox);
@@ -106,7 +106,7 @@ var bookappointment={
     appointment:function(bookId,studentId, node){
         console.log("我执行预约的方法!" );
         node.html('<button class="btn btn-primary btn-lg" id="appointmentBtn">预约</button>');
-          
+        $('.panel panel-default').hide(); 
         var appointmentUrl = bookappointment.URL.appoint(bookId,studentId);
         console.log("appointmentUrl:"+appointmentUrl);
         //绑定一次点击事件
