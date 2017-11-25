@@ -113,6 +113,12 @@ public class BookController {
         }
     }
 
+    /**
+     * 此处用ajax将result对象传递到前端,交由js代码处理
+     * @param bookId
+     * @param studentId
+     * @return
+     */
     @RequestMapping(value="{bookId}/appoint", method=RequestMethod.POST, produces={
             "application/json; charset=utf-8"})
     @ResponseBody

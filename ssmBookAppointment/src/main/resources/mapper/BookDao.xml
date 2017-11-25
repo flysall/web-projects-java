@@ -14,7 +14,7 @@
     </select>
 
     <select id="querySome" parameterType="com.flysall.appoint.entity.Book" resultType="com.flysall.appoint.entity.Book">
-        select boo_id,name,introd,number from book
+        select book_id,name,introd,number from book
         <where>
             <!-- <if test="name !=null and !&quot;&quot;.equals(name.trim())">  -->
             and name like '%' #{name} '%'

@@ -11,7 +11,7 @@
         <div class="panel-heading text-center">
             <h2>图书列表</2>
         </div>
-        <form name="firstForm" action="<%= request.getContextPath()%>/books/search" method="post">
+        <form name="firstForm" action="/ssm-BookAppointment/books/search" method="post">
             <div class="panel-heading">
                 <table class="table table-bookName">
                     <thead>
@@ -22,7 +22,7 @@
                             </th>
                             <th>
                                 <input type="submit" id="tabSub" value="检索"/>
-                            </th>
+                            </th>       
                         </tr>
                     </thead>
                 </table>

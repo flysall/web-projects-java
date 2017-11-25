@@ -43,7 +43,7 @@ String basePath = request.getScheme() + "://"
         <div class="panel-body text-center">
             <h2 class="text-danger">
                 <span class="glyphicon" id="appoint-box"></span>
-                <span class="glyphicon"><a class="btn btn-primary btn-lg" href="/ssm-BookAppointment/books/appoint?studentId=${cookie['student'].value}" target="_blank">查看我预约的书籍</a></sapn>
+                <span class="glyphicon"><a class="btn btn-primary btn-lg" href="/ssm-BookAppointment/books/appoint?studentId=${cookie['studentId'].value}" target="_blank">查看我预约的书籍</a></sapn>
             </h2>
         </div>
     </div>
